@@ -1,4 +1,4 @@
-package ir.majj.golnour_cllient.control
+package ir.majj.golnour_client.control
 
 import androidx.appcompat.app.AppCompatActivity
 

@@ -1,4 +1,4 @@
-package ir.majj.golnour_cllient.preferences
+package ir.majj.golnour_client.preferences
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -65,15 +65,15 @@ object Preferences {
     }
 
     private inline fun <reified T> fromString(s: String): T? {
-        try {
+        return try {
             val bytes = Base64.decode(s.toByteArray(), Base64.DEFAULT)
             val byteInput = ByteArrayInputStream(bytes)
             val objectInput = ObjectInputStream(byteInput)
             val obj = objectInput.readObject()
-            return obj as T
+            obj as T
         } catch (e: Exception) {
             e.printStackTrace()
-            return null
+            null
         }
     }
 

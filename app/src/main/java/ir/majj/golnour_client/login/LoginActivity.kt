@@ -1,4 +1,4 @@
-package ir.majj.golnour_cllient.login
+package ir.majj.golnour_client.login
 
 import android.content.Context
 import android.os.Bundle

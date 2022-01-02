@@ -1,10 +1,10 @@
-package ir.majj.golnour_cllient.launcher
+package ir.majj.golnour_client.launcher
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ir.majj.golnour_cllient.login.LoginActivity
-import ir.majj.golnour_cllient.preferences.Settings
-import ir.majj.golnour_cllient.setup.SetupActivity
+import ir.majj.golnour_client.login.LoginActivity
+import ir.majj.golnour_client.preferences.Settings
+import ir.majj.golnour_client.setup.SetupActivity
 import ir.majj.golnour_cllient.utils.startActivity
 
 class LauncherActivity : AppCompatActivity() {
