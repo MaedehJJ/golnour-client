@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">golnour-cllient</string>
     <string name="setup_phone_number">شماره تلفن</string>
+    <string name="setup_save">ذخیره اطلاعات</string>
 </resources>

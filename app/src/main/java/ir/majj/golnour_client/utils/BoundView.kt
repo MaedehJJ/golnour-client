@@ -1,9 +1,9 @@
-package ir.majj.golnour_cllient.utils
+package ir.majj.golnour_client.utils
 
 import android.util.Log
 import android.view.ViewGroup
+import androidx.viewbinding.BuildConfig
 import androidx.viewbinding.ViewBinding
-import ir.majj.golnour_cllient.BuildConfig
 
 interface BoundView<T : ViewBinding> {
     var binding: T?
