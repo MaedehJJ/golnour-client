@@ -4,4 +4,5 @@
     <string name="setup_save">ذخیره اطلاعات</string>
     <string name="login_passcode">رمز ورود</string>
     <string name="login_login">ورود</string>
+    <string name="login_wrongPasscode">رمز عبور صحیح نیست</string>
 </resources>

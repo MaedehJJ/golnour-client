@@ -3,10 +3,11 @@ package ir.majj.golnour_client.login
 import android.content.Context
 import android.os.Bundle
 import android.view.ViewGroup
+import ir.majj.golnour_client.R
+import ir.majj.golnour_client.control.ControlActivity
 import ir.majj.golnour_client.databinding.ActivityLoginBinding
-import ir.majj.golnour_client.utils.BoundActivity
-import ir.majj.golnour_client.utils.intentFor
-import ir.majj.golnour_client.utils.onClick
+import ir.majj.golnour_client.preferences.Settings
+import ir.majj.golnour_client.utils.*
 
 class LoginActivity : BoundActivity<ActivityLoginBinding>() {
     override fun inflateLayout(container: ViewGroup?) = ActivityLoginBinding.inflate(layoutInflater)
@@ -15,7 +16,16 @@ class LoginActivity : BoundActivity<ActivityLoginBinding>() {
         super.onCreate(savedInstanceState)
 
         bind {
-            login.onClick {  }
+            login.onClick { login() }
+        }
+    }
+
+    private fun login() = bind {
+        val pass = passcode.text.toString()
+        if (pass != Settings.password) {
+            passcodeContainer.error = string(R.string.login_wrongPasscode)
+        } else {
+            ControlActivity.getOpenIntent(this@LoginActivity).startActivity(this@LoginActivity)
         }
     }
 

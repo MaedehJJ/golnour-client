@@ -2,9 +2,15 @@ package ir.majj.golnour_client.utils
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.View
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 import androidx.viewbinding.ViewBinding
 import java.io.Serializable
 
@@ -13,6 +19,17 @@ fun ViewBinding.onClick(f: (View) -> Unit) = root.onClick(f)
 fun <T : View> T.onClick(f: (T) -> Unit) = apply {
     setOnClickListener { f(this) }
 }
+
+fun Context.string(@StringRes resId: Int): String = getString(resId)
+
+fun Context.string(@StringRes resId: Int, vararg formatArgs: Any?): String =
+    getString(resId, *formatArgs)
+
+@ColorInt
+fun Context.color(@ColorRes colorId: Int) = ContextCompat.getColor(this, colorId)
+
+fun Context.drawable(@DrawableRes drawableId: Int): Drawable? =
+    ContextCompat.getDrawable(this, drawableId)
 
 fun Intent.startActivity(context: Context) = context.startActivity(this)
 
