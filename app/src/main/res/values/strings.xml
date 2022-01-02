@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">golnour-cllient</string>
     <string name="setup_phone_number">شماره تلفن</string>
+    <string name="setup_save">ذخیره اطلاعات</string>
     <string name="login_passcode">رمز ورود</string>
     <string name="login_login">ورود</string>
-    <string name="setup_save">ذخیره اطلاعات</string>
 </resources>
