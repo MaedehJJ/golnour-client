@@ -40,6 +40,5 @@
             android:name="ir.majj.golnour_client.setup.SetupActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateAlwaysVisible" />
-
     </application>
 </manifest>

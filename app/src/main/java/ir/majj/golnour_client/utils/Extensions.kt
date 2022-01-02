@@ -1,10 +1,18 @@
-package ir.majj.golnour_cllient.utils
+package ir.majj.golnour_client.utils
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
+import android.view.View
+import androidx.viewbinding.ViewBinding
 import java.io.Serializable
+
+fun ViewBinding.onClick(f: (View) -> Unit) = root.onClick(f)
+
+fun <T : View> T.onClick(f: (T) -> Unit) = apply {
+    setOnClickListener { f(this) }
+}
 
 fun Intent.startActivity(context: Context) = context.startActivity(this)
 

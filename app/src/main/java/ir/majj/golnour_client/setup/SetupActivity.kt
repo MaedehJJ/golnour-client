@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ir.majj.golnour_client.login.LoginActivity
-import ir.majj.golnour_cllient.utils.intentFor
+import ir.majj.golnour_client.utils.intentFor
 
 class SetupActivity : AppCompatActivity() {
 
