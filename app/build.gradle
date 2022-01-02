@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "ir.majj.golnour"
+        applicationId "ir.majj.golnour_cllient"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -32,5 +32,14 @@ android {
 }
 
 dependencies {
+    // [AndroidX](https://developer.android.com/jetpack/androidx)
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
 
+    // [Material Design](https://material.io/develop/android)
+    implementation 'com.google.android.material:material:1.4.0'
+
+    // [Kotlin stdlib/reflect](https://kotlinlang.org/api/latest/jvm/stdlib/)
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
 }
