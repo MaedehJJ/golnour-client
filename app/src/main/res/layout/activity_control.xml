@@ -8,118 +8,458 @@
         android:id="@+id/slider1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox1"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/slider2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <CheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/txt1"
+        app:layout_constraintLeft_toLeftOf="@id/slider1"
+        app:layout_constraintRight_toRightOf="@id/slider1"
+        app:layout_constraintTop_toBottomOf="@id/slider1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_1"
+        app:layout_constraintBottom_toTopOf="@id/switch1"
+        app:layout_constraintLeft_toLeftOf="@id/slider1"
+        app:layout_constraintRight_toRightOf="@id/slider1"
+        app:layout_constraintTop_toBottomOf="@id/checkbox1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider1"
+        app:layout_constraintRight_toRightOf="@id/slider1"
+        app:layout_constraintTop_toBottomOf="@id/txt1"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox2"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@id/slider1"
         app:layout_constraintRight_toLeftOf="@id/slider3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
+    <CheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/txt2"
+        app:layout_constraintLeft_toLeftOf="@id/slider2"
+        app:layout_constraintRight_toRightOf="@id/slider2"
+        app:layout_constraintTop_toBottomOf="@id/slider2"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_2"
+        app:layout_constraintBottom_toTopOf="@id/switch2"
+        app:layout_constraintLeft_toLeftOf="@id/slider2"
+        app:layout_constraintRight_toRightOf="@id/slider2"
+        app:layout_constraintTop_toBottomOf="@id/checkbox2"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider2"
+        app:layout_constraintRight_toRightOf="@id/slider2"
+        app:layout_constraintTop_toBottomOf="@id/txt2"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox3"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@id/slider2"
         app:layout_constraintRight_toLeftOf="@id/slider4"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
+    <CheckBox
+        android:id="@+id/checkbox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/txt3"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="@id/slider3"
+        app:layout_constraintRight_toRightOf="@id/slider3"
+        app:layout_constraintTop_toBottomOf="@id/slider3"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_3"
+        app:layout_constraintBottom_toTopOf="@id/switch3"
+        app:layout_constraintLeft_toLeftOf="@id/slider3"
+        app:layout_constraintRight_toRightOf="@id/slider3"
+        app:layout_constraintTop_toBottomOf="@id/checkbox3"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider3"
+        app:layout_constraintRight_toRightOf="@id/slider3"
+        app:layout_constraintTop_toBottomOf="@id/txt3"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox4"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@id/slider3"
         app:layout_constraintRight_toLeftOf="@id/slider5"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
+    <CheckBox
+        android:id="@+id/checkbox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/txt4"
+        app:layout_constraintLeft_toLeftOf="@id/slider4"
+        app:layout_constraintRight_toRightOf="@id/slider4"
+        app:layout_constraintTop_toBottomOf="@id/slider4"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_4"
+        app:layout_constraintBottom_toTopOf="@id/switch4"
+        app:layout_constraintLeft_toLeftOf="@id/slider4"
+        app:layout_constraintRight_toRightOf="@id/slider4"
+        app:layout_constraintTop_toBottomOf="@id/checkbox4"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider4"
+        app:layout_constraintRight_toRightOf="@id/slider4"
+        app:layout_constraintTop_toBottomOf="@id/txt4"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@id/slider4"
         app:layout_constraintRight_toLeftOf="@id/slider6"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
+    <CheckBox
+        android:id="@+id/checkbox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/txt5"
+        app:layout_constraintLeft_toLeftOf="@id/slider5"
+        app:layout_constraintRight_toRightOf="@id/slider5"
+        app:layout_constraintTop_toBottomOf="@id/slider5"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_5"
+        app:layout_constraintBottom_toTopOf="@id/switch5"
+        app:layout_constraintLeft_toLeftOf="@id/slider5"
+        app:layout_constraintRight_toRightOf="@id/slider5"
+        app:layout_constraintTop_toBottomOf="@id/checkbox5"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider5"
+        app:layout_constraintRight_toRightOf="@id/slider5"
+        app:layout_constraintTop_toBottomOf="@id/txt5"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox6"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@id/slider5"
         app:layout_constraintRight_toLeftOf="@id/slider7"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
+    <CheckBox
+        android:id="@+id/checkbox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/txt6"
+        app:layout_constraintLeft_toLeftOf="@id/slider6"
+        app:layout_constraintRight_toRightOf="@id/slider6"
+        app:layout_constraintTop_toBottomOf="@id/slider6"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_6"
+        app:layout_constraintBottom_toTopOf="@id/switch6"
+        app:layout_constraintLeft_toLeftOf="@id/slider6"
+        app:layout_constraintRight_toRightOf="@id/slider6"
+        app:layout_constraintTop_toBottomOf="@id/checkbox6"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider6"
+        app:layout_constraintRight_toRightOf="@id/slider6"
+        app:layout_constraintTop_toBottomOf="@id/txt6"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox7"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@id/slider6"
         app:layout_constraintRight_toLeftOf="@id/slider8"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
+    <CheckBox
+        android:id="@+id/checkbox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/txt7"
+        app:layout_constraintLeft_toLeftOf="@id/slider7"
+        app:layout_constraintRight_toRightOf="@id/slider7"
+        app:layout_constraintTop_toBottomOf="@id/slider7"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_7"
+        app:layout_constraintBottom_toTopOf="@id/switch7"
+        app:layout_constraintLeft_toLeftOf="@id/slider7"
+        app:layout_constraintRight_toRightOf="@id/slider7"
+        app:layout_constraintTop_toBottomOf="@id/checkbox7"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider7"
+        app:layout_constraintRight_toRightOf="@id/slider7"
+        app:layout_constraintTop_toBottomOf="@id/txt7"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
         android:layoutDirection="rtl"
         android:rotation="90"
         android:stepSize="5.0"
         android:valueFrom="50.0"
         android:valueTo="100.0"
+        app:layout_constraintBottom_toTopOf="@id/checkbox8"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@id/slider7"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <CheckBox
+        android:id="@+id/checkbox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt8"
+        app:layout_constraintLeft_toLeftOf="@id/slider8"
+        app:layout_constraintRight_toRightOf="@id/slider8"
+        app:layout_constraintTop_toBottomOf="@id/slider8"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/txt8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="@string/control_tower_8"
+        app:layout_constraintBottom_toTopOf="@id/switch8"
+        app:layout_constraintLeft_toLeftOf="@id/slider8"
+        app:layout_constraintRight_toRightOf="@id/slider8"
+        app:layout_constraintTop_toBottomOf="@id/checkbox8"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@id/switchBarrier"
+        app:layout_constraintLeft_toLeftOf="@id/slider8"
+        app:layout_constraintRight_toRightOf="@id/slider8"
+        app:layout_constraintTop_toBottomOf="@id/txt8"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/switchBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/primary"
+        android:text="@string/control_send"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/slider1"
+        app:layout_constraintRight_toRightOf="@id/slider8"
+        app:layout_constraintTop_toBottomOf="@+id/switchBarrier"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
