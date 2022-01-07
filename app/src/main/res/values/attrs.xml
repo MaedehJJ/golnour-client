@@ -3,7 +3,6 @@
     <attr name="fontFaceStyle" format="enum">
         <enum name="normal" value="0" />
         <enum name="bold" value="1" />
-        <enum name="extraBold" value="2" />
     </attr>
 
     <declare-styleable name="ElegantButton">

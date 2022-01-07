@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:ignore="RtlHardcoded">
 
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/setup_title"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:fontFaceStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ir.majj.golnour_client.elegantviews.ElegantEditText
         android:id="@+id/phone"
         style="@style/Input"
@@ -17,7 +31,7 @@
         android:inputType="phone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
     <ir.majj.golnour_client.elegantviews.ElegantEditText
         android:id="@+id/passcode"

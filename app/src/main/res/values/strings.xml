@@ -13,4 +13,5 @@
     <string name="control_tower">Tower %d</string>
     <string name="control_send">ارسال</string>
     <string name="control_sms_permission_error">برای ارسال پیام نیاز به صدور اجازه دسترسی است.</string>
+    <string name="setup_title">ثبت تنظیمات</string>
 </resources>
