@@ -19,4 +19,5 @@
     <string name="control_tower_7">Tower 7</string>
     <string name="control_tower_8">Tower 8</string>
     <string name="control_send">Send</string>
+    <string name="control_sms_permission_error">برای ارسال پیام نیاز به صدور اجازه دسترسی است.</string>
 </resources>
