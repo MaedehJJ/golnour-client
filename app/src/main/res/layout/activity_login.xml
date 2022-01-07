@@ -12,33 +12,26 @@
         android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/passcodeContainer"
+        app:layout_constraintRight_toLeftOf="@id/passcode"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        tools:src="@drawable/img_logo" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passcodeContainer"
+    <ir.majj.golnour_client.elegantviews.ElegantEditText
+        android:id="@+id/passcode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="12dp"
+        android:hint="@string/login_passcode"
+        android:inputType="numberPassword"
         app:layout_constraintBottom_toTopOf="@id/login"
         app:layout_constraintLeft_toRightOf="@id/logo"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passcode"
-            android:inputType="numberPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/login_passcode" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
+    <ir.majj.golnour_client.elegantviews.ElegantButton
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +39,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/logo"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passcodeContainer" />
+        app:layout_constraintTop_toBottomOf="@id/passcode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

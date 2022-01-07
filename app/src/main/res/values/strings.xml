@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">کنترل‌کننده‌ی گلنور</string>
+    <string name="app_name">Golnoor Airport Apron Control Lighting</string>
     <string name="setup_phone_number">شماره تلفن</string>
-    <string name="setup_save">تمامی فیلدها را پر کنید</string>
+    <string name="setup_save">ذخیره</string>
+    <string name="setup_error">تمامی فیلدها را پر کنید</string>
     <string name="login_passcode">رمز ورود</string>
     <string name="login_login">ورود</string>
     <string name="login_wrongPasscode">رمز عبور صحیح نیست</string>
+    <string name="setup_passcode">رمز عبور</string>
 </resources>

@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import ir.majj.golnour_client.R
 import ir.majj.golnour_client.databinding.ActivitySetupBinding
-import ir.majj.golnour_client.login.LoginActivity
 import ir.majj.golnour_client.preferences.Settings
 import ir.majj.golnour_client.utils.BoundActivity
 import ir.majj.golnour_client.utils.intentFor
@@ -30,8 +29,8 @@ class SetupActivity : BoundActivity<ActivitySetupBinding>() {
     }
 
     private fun saveSetup() = bind {
-        if (phone.text.isEmpty() || password.text.isEmpty()) {
-            Toast.makeText(this@SetupActivity, R.string.setup_save, Toast.LENGTH_LONG).show()
+        if (phone.text.isNullOrEmpty() || password.text.isNullOrEmpty()) {
+            Toast.makeText(this@SetupActivity, R.string.setup_error, Toast.LENGTH_SHORT).show()
         } else {
             Settings.password = password.text.toString()
             Settings.phoneNumber = phone.text.toString()
@@ -40,6 +39,6 @@ class SetupActivity : BoundActivity<ActivitySetupBinding>() {
     }
 
     companion object {
-        fun getOpenIntent(context: Context) = context.intentFor<LoginActivity>()
+        fun getOpenIntent(context: Context) = context.intentFor<SetupActivity>()
     }
 }

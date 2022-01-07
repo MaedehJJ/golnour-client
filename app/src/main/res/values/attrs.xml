@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="fontFaceStyle" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="bold" value="1" />
+        <enum name="extraBold" value="2" />
+    </attr>
+
+    <declare-styleable name="ElegantButton">
+        <attr name="fontFaceStyle" />
+    </declare-styleable>
+
+    <declare-styleable name="ElegantEditText">
+        <attr name="fontFaceStyle" />
+    </declare-styleable>
+
+    <declare-styleable name="ElegantTabLayout">
+        <attr name="fontFaceStyle" />
+    </declare-styleable>
+
+    <declare-styleable name="ElegantTextInputLayout">
+        <attr name="fontFaceStyle" />
+    </declare-styleable>
+
+    <declare-styleable name="ElegantTextView">
+        <attr name="fontFaceStyle" />
+    </declare-styleable>
+
+</resources>
