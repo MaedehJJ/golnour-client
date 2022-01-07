@@ -43,4 +43,7 @@ dependencies {
 
     // [Kotlin stdlib/reflect](https://kotlinlang.org/api/latest/jvm/stdlib/)
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
+
+    // [RangeSeekBar](https://github.com/MohammedAlaaMorsi/RangeSeekBar)
+    implementation 'com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6'
 }
