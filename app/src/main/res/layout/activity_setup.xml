@@ -8,11 +8,9 @@
 
     <ir.majj.golnour_client.elegantviews.ElegantEditText
         android:id="@+id/phone"
+        style="@style/Input"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
         android:gravity="right"
         android:hint="@string/setup_phone_number"
         android:imeActionLabel="@string/setup_next"
@@ -23,12 +21,9 @@
 
     <ir.majj.golnour_client.elegantviews.ElegantEditText
         android:id="@+id/passcode"
+        style="@style/Input"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:gravity="right"
         android:hint="@string/setup_passcode"
         android:imeActionLabel="@string/setup_confirm"
         android:inputType="number"
@@ -38,11 +33,8 @@
 
     <ir.majj.golnour_client.elegantviews.ElegantButton
         android:id="@+id/save"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
+        style="@style/NormalButton"
+        android:layout_marginTop="32dp"
         android:text="@string/setup_save"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

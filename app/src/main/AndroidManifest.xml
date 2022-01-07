@@ -5,19 +5,20 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="false"
         android:name=".Golnour"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Golnourcllient">
+        android:theme="@style/AppTheme">
 
         <activity
             android:name="ir.majj.golnour_client.launcher.LauncherActivity"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoDisplay">
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,16 +30,19 @@
         <activity
             android:name="ir.majj.golnour_client.login.LoginActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysVisible" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
             android:name="ir.majj.golnour_client.control.ControlActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysVisible" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
             android:name="ir.majj.golnour_client.setup.SetupActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysVisible" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 </manifest>

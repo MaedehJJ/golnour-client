@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded">
 
     <ImageView
         android:id="@+id/logo"
@@ -21,10 +22,9 @@
         android:id="@+id/passcode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:gravity="right"
         android:layout_marginTop="32dp"
-        android:layout_marginRight="12dp"
+        style="@style/Input"
+        android:gravity="right"
         android:hint="@string/login_passcode"
         android:imeActionLabel="@string/login_confirm"
         android:inputType="numberPassword"
@@ -35,8 +35,8 @@
 
     <ir.majj.golnour_client.elegantviews.ElegantButton
         android:id="@+id/login"
+        style="@style/NormalButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/login_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/logo"

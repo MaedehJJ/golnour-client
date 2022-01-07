@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import ir.majj.golnour_client.R
 import ir.majj.golnour_client.databinding.ActivitySetupBinding
-import ir.majj.golnour_client.launcher.LauncherActivity
+import ir.majj.golnour_client.login.LoginActivity
 import ir.majj.golnour_client.preferences.Settings
 import ir.majj.golnour_client.utils.BoundActivity
 import ir.majj.golnour_client.utils.intentFor
@@ -38,7 +38,7 @@ class SetupActivity : BoundActivity<ActivitySetupBinding>() {
             Settings.phoneNumber = phone.text.toString()
             Settings.isSetupDone = true
 
-            LauncherActivity.getOpenIntent(this@SetupActivity).startActivity(this@SetupActivity)
+            LoginActivity.getOpenIntent(this@SetupActivity).startActivity(this@SetupActivity)
             finish()
         }
     }
