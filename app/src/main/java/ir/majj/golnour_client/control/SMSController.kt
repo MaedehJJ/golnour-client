@@ -6,9 +6,10 @@ import timber.log.Timber
 
 object SMSController {
     fun sendSms(data: TowerData) {
+        val content = "M_${data.firstSet.joinToString(",")}\nN_${data.secondSet.joinToString(",")}"
         val smsManager = SmsManager.getDefault()
         try {
-            smsManager.sendTextMessage(Settings.phoneNumber, null, "", null, null)
+            smsManager.sendTextMessage(Settings.phoneNumber, null, content, null, null)
         } catch (e: IllegalArgumentException) {
             Timber.e(e, "${Settings.phoneNumber} is not in its appropriate format")
         }
