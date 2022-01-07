@@ -20,10 +20,10 @@
 
     <ir.majj.golnour_client.elegantviews.ElegantEditText
         android:id="@+id/passcode"
+        style="@style/Input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        style="@style/Input"
         android:gravity="right"
         android:hint="@string/login_passcode"
         android:imeActionLabel="@string/login_confirm"
