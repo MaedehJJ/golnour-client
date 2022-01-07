@@ -16,7 +16,7 @@
         app:circleRadius="14dp"
         app:circleTextColor="@color/white"
         app:circleTextSize="@dimen/value_bar_circleTextSize"
-        app:currentValue="60"
+        app:currentValue="50"
         app:fillColor="@color/primary"
         app:layout_constraintBottom_toTopOf="@id/checkbox"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -29,10 +29,21 @@
         app:orientation="BOTTOM_TO_TOP"
         app:stepValue="5" />
 
+    <View
+        android:id="@+id/sliderOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@id/slider"
+        app:layout_constraintLeft_toLeftOf="@id/slider"
+        app:layout_constraintRight_toRightOf="@id/slider"
+        app:layout_constraintTop_toTopOf="@id/slider" />
+
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checked="true"
         android:minWidth="0dp"
         android:minHeight="0dp"
         app:layout_constraintBottom_toTopOf="@id/label"
@@ -45,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/control_tower_1"
+        android:text="@string/control_tower"
         android:textColor="@color/primaryDark"
         app:layout_constraintBottom_toTopOf="@id/toggle"
         app:layout_constraintLeft_toLeftOf="parent"
