@@ -15,13 +15,14 @@
         android:layout_marginRight="16dp"
         android:gravity="right"
         android:hint="@string/setup_phone_number"
+        android:imeActionLabel="@string/setup_next"
         android:inputType="phone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ir.majj.golnour_client.elegantviews.ElegantEditText
-        android:id="@+id/password"
+        android:id="@+id/passcode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -29,7 +30,8 @@
         android:layout_marginRight="16dp"
         android:gravity="right"
         android:hint="@string/setup_passcode"
-        android:inputType="textPassword"
+        android:imeActionLabel="@string/setup_confirm"
+        android:inputType="number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phone" />
@@ -44,6 +46,6 @@
         android:text="@string/setup_save"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password" />
+        app:layout_constraintTop_toBottomOf="@id/passcode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

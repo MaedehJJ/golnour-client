@@ -23,9 +23,10 @@ class LoginActivity : BoundActivity<ActivityLoginBinding>() {
     private fun login() = bind {
         val pass = passcode.text.toString()
         if (pass != Settings.password) {
-            passcodeContainer.error = string(R.string.login_wrongPasscode)
+            passcode.error = string(R.string.login_wrongPasscode)
         } else {
             ControlActivity.getOpenIntent(this@LoginActivity).startActivity(this@LoginActivity)
+            finish()
         }
     }
 

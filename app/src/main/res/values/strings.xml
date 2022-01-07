@@ -2,6 +2,9 @@
     <string name="app_name">Golnoor Airport Apron Control Lighting</string>
     <string name="setup_phone_number">شماره تلفن</string>
     <string name="setup_save">ذخیره</string>
+    <string name="setup_confirm">تایید</string>
+    <string name="login_confirm">تایید</string>
+    <string name="setup_next">بعدی</string>
     <string name="setup_error">تمامی فیلدها را پر کنید</string>
     <string name="login_passcode">رمز ورود</string>
     <string name="login_login">ورود</string>
