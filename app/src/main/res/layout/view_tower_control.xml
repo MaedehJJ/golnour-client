@@ -2,54 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:clipChildren="false">
-
-    <com.mohammedalaa.seekbar.RangeSeekBarView
-        android:id="@+id/slider"
-        android:layout_width="20dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="2dp"
-        app:barHeight="15dp"
-        app:baseColor="@color/disable"
-        app:circleFillColor="@color/primaryDark"
-        app:circleRadius="14dp"
-        app:circleTextColor="@color/white"
-        app:circleTextSize="@dimen/value_bar_circleTextSize"
-        app:currentValue="50"
-        app:fillColor="@color/primary"
-        app:layout_constraintBottom_toTopOf="@id/checkbox"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:maxValue="100"
-        app:minValue="50"
-        app:orientation="BOTTOM_TO_TOP"
-        app:stepValue="5" />
-
-    <View
-        android:id="@+id/sliderOverlay"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clickable="false"
-        app:layout_constraintBottom_toBottomOf="@id/slider"
-        app:layout_constraintLeft_toLeftOf="@id/slider"
-        app:layout_constraintRight_toRightOf="@id/slider"
-        app:layout_constraintTop_toTopOf="@id/slider" />
-
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:minWidth="0dp"
-        android:minHeight="0dp"
-        app:layout_constraintBottom_toTopOf="@id/label"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/slider" />
+    android:layout_height="wrap_content">
 
     <ir.majj.golnour_client.elegantviews.ElegantTextView
         android:id="@+id/label"
@@ -61,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@id/toggle"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkbox" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/toggle"

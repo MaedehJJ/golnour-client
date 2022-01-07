@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import ir.majj.golnour_client.R
 import ir.majj.golnour_client.databinding.ActivityControlBinding
+import ir.majj.golnour_client.databinding.ViewSliderControlBinding
 import ir.majj.golnour_client.databinding.ViewTowerControlBinding
 import ir.majj.golnour_client.setup.SetupActivity
 import ir.majj.golnour_client.utils.*
@@ -16,6 +17,7 @@ import timber.log.Timber
 
 
 class ControlActivity : BoundActivity<ActivityControlBinding>() {
+    private val sliders: MutableList<ViewSliderControlBinding> = mutableListOf()
     private val towers: MutableList<ViewTowerControlBinding> = mutableListOf()
 
     override fun inflateLayout(container: ViewGroup?) =
@@ -25,17 +27,25 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
         super.onCreate(savedInstanceState)
 
         bind {
-            towers.addAll(listOf(tower1, tower2, tower3, tower4, tower5, tower6, tower7, tower8))
-            towers.forEachIndexed { index, tower ->
-                tower.checkbox.setOnCheckedChangeListener { _, isChecked ->
-                    towers[index].slider.circleFillColor = color(
+            sliders.addAll(
+                listOf(slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8)
+            )
+            towers.addAll(
+                listOf(
+                    tower1, tower2, tower3, tower4, tower5, tower6, tower7, tower8, tower9,
+                    tower10, tower11
+                )
+            )
+            sliders.forEachIndexed { index, slider ->
+                slider.checkbox.setOnCheckedChangeListener { _, isChecked ->
+                    sliders[index].slider.circleFillColor = color(
                         if (isChecked) {
                             R.color.primaryDark
                         } else {
                             R.color.disable
                         }
                     )
-                    towers[index].sliderOverlay.isClickable = !isChecked
+                    sliders[index].sliderOverlay.isClickable = !isChecked
                 }
             }
             towers.forEachIndexed { index, tower ->
@@ -79,7 +89,7 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
     }
 
     private fun collectData(): SMSController.TowerData? = bindAndReturn {
-        val firstSet = towers.map {
+        val firstSet = sliders.map {
             if (it.checkbox.isChecked) {
                 it.slider.currentValue
             } else {
