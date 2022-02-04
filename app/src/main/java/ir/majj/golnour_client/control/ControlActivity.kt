@@ -73,7 +73,7 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
             return
         }
 
-        SMSController.sendSms(data)
+        SMSController.sendSms(data, this)
     }
 
     private fun checkSmsPermission(): Boolean {
