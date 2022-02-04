@@ -16,4 +16,9 @@
     <string name="setup_title">ثبت تنظیمات</string>
     <string name="sms_sending">در حال ارسال مشخصات …</string>
     <string name="sms_sendingFailed">ارسال پیام با مشکل مواجه شد!</string>
+    <string name="about_description">این برنامه همراه با سیستم کنترل مرتبط، جهت کنترل روشنایی اپرون فرودگاه توسط واحد IOT شرکت گلنور طراحی و پیاده سازی گردیده است.</string>
+    <string name="about_websiteLabel">وبسایت</string>
+    <string name="about_website">www.Golnoor.com</string>
+    <string name="about_email">RD7@golnoor.com</string>
+    <string name="about_emailLabel">تماس با پشتیبانی</string>
 </resources>

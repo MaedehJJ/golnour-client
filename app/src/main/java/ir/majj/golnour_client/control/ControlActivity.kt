@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import ir.majj.golnour_client.R
+import ir.majj.golnour_client.about.AboutActivity
 import ir.majj.golnour_client.databinding.ActivityControlBinding
 import ir.majj.golnour_client.databinding.ViewSliderControlBinding
 import ir.majj.golnour_client.databinding.ViewTowerControlBinding
@@ -51,6 +52,10 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
                 SetupActivity.getOpenIntent(this@ControlActivity)
                     .startActivity(this@ControlActivity)
                 finish()
+            }
+            about.onClick {
+                AboutActivity.getOpenIntent(this@ControlActivity)
+                    .startActivity(this@ControlActivity)
             }
         }
     }

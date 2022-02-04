@@ -1,6 +1,5 @@
 package ir.majj.golnour_client.launcher
 
-import android.content.Context
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import ir.majj.golnour_client.login.LoginActivity
 import ir.majj.golnour_client.preferences.Settings
 import ir.majj.golnour_client.setup.SetupActivity
 import ir.majj.golnour_client.utils.BoundActivity
-import ir.majj.golnour_client.utils.intentFor
 import ir.majj.golnour_client.utils.startActivity
 
 class LauncherActivity : BoundActivity<ActivityLauncherBinding>() {
@@ -36,9 +34,5 @@ class LauncherActivity : BoundActivity<ActivityLauncherBinding>() {
         override fun onFinish() {
             navigate()
         }
-    }
-
-    companion object {
-        fun getOpenIntent(context: Context) = context.intentFor<LauncherActivity>()
     }
 }
