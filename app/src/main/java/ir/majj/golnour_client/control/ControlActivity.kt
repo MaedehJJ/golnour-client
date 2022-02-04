@@ -63,14 +63,14 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
     private fun setUpColumn(index: Int, view: ViewSliderControlBinding) {
         view.label.text = string(R.string.control_tower, index + 1)
         view.checkbox.setOnCheckedChangeListener { _, isChecked ->
-            sliders[index].slider.circleFillColor = color(
+            view.slider.circleFillColor = color(
                 if (isChecked) {
                     R.color.primaryDark
                 } else {
                     R.color.disable
                 }
             )
-            sliders[index].sliderOverlay.isClickable = !isChecked
+            view.sliderOverlay.isClickable = !isChecked
         }
     }
 
