@@ -13,6 +13,7 @@
         android:baselineAligned="false"
         android:clipChildren="false"
         android:orientation="horizontal"
+        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/towersContainer"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -87,10 +88,11 @@
     <LinearLayout
         android:id="@+id/towersContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
+        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/send"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -98,7 +100,7 @@
 
         <include
             android:id="@+id/tower1"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -106,7 +108,7 @@
 
         <include
             android:id="@+id/tower2"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -114,7 +116,7 @@
 
         <include
             android:id="@+id/tower3"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -122,7 +124,7 @@
 
         <include
             android:id="@+id/tower4"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -130,7 +132,7 @@
 
         <include
             android:id="@+id/tower5"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -138,7 +140,7 @@
 
         <include
             android:id="@+id/tower6"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -146,7 +148,7 @@
 
         <include
             android:id="@+id/tower7"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -154,7 +156,7 @@
 
         <include
             android:id="@+id/tower8"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -162,7 +164,7 @@
 
         <include
             android:id="@+id/tower9"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -170,7 +172,7 @@
 
         <include
             android:id="@+id/tower10"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -178,7 +180,7 @@
 
         <include
             android:id="@+id/tower11"
-            layout="@layout/view_tower_control"
+            layout="@layout/view_slider_control"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

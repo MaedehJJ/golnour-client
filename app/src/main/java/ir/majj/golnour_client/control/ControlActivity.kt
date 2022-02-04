@@ -18,7 +18,7 @@ import timber.log.Timber
 
 class ControlActivity : BoundActivity<ActivityControlBinding>() {
     private val sliders: MutableList<ViewSliderControlBinding> = mutableListOf()
-    private val towers: MutableList<ViewTowerControlBinding> = mutableListOf()
+    private val towers: MutableList<ViewSliderControlBinding> = mutableListOf()
 
     override fun inflateLayout(container: ViewGroup?) =
         ActivityControlBinding.inflate(layoutInflater)
@@ -36,20 +36,12 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
                     tower10, tower11
                 )
             )
+
             sliders.forEachIndexed { index, slider ->
-                slider.checkbox.setOnCheckedChangeListener { _, isChecked ->
-                    sliders[index].slider.circleFillColor = color(
-                        if (isChecked) {
-                            R.color.primaryDark
-                        } else {
-                            R.color.disable
-                        }
-                    )
-                    sliders[index].sliderOverlay.isClickable = !isChecked
-                }
+                setUpColumn(index, slider)
             }
             towers.forEachIndexed { index, tower ->
-                tower.label.text = string(R.string.control_tower, index + 1)
+                setUpColumn(index, tower)
             }
 
             send.onClick {
@@ -60,6 +52,20 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
                     .startActivity(this@ControlActivity)
                 finish()
             }
+        }
+    }
+
+    private fun setUpColumn(index: Int, view: ViewSliderControlBinding) {
+        view.label.text = string(R.string.control_tower, index + 1)
+        view.checkbox.setOnCheckedChangeListener { _, isChecked ->
+            sliders[index].slider.circleFillColor = color(
+                if (isChecked) {
+                    R.color.primaryDark
+                } else {
+                    R.color.disable
+                }
+            )
+            sliders[index].sliderOverlay.isClickable = !isChecked
         }
     }
 
@@ -97,8 +103,8 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
             }
         }
         val secondSet = towers.map {
-            if (it.toggle.isChecked) {
-                ENABLED_VALUE
+            if (it.checkbox.isChecked) {
+                it.slider.currentValue
             } else {
                 DISABLED_VALUE
             }
@@ -130,7 +136,6 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
     companion object {
         private const val REQUEST_SEND_SMS_PERMISSIONS = 1
         private const val DISABLED_VALUE = 10
-        private const val ENABLED_VALUE = 100
 
         fun getOpenIntent(context: Context) = context.intentFor<ControlActivity>()
     }

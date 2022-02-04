@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:clipChildren="false">
 
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/control_tower"
+        android:textColor="@color/primaryDark"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.mohammedalaa.seekbar.RangeSeekBarView
         android:id="@+id/slider"
         android:layout_width="20dp"
@@ -21,7 +32,7 @@
         app:layout_constraintBottom_toTopOf="@id/checkbox"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintVertical_chainStyle="packed"
         app:maxValue="100"
