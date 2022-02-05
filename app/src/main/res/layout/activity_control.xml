@@ -6,186 +6,304 @@
     android:layout_height="match_parent"
     tools:ignore="RtlHardcoded,ContentDescription">
 
-    <LinearLayout
-        android:id="@+id/slidersContainer"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/newTowersContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:baselineAligned="false"
         android:clipChildren="false"
-        android:orientation="horizontal"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@id/towersContainer"
+        app:layout_constraintBottom_toTopOf="@id/oldTowersContainer"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1">
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <ir.majj.golnour_client.elegantviews.ElegantTextView
+            android:id="@+id/newTowersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/control_newTowers"
+            android:textColor="@color/primaryDark"
+            android:textSize="20sp"
+            app:fontFaceStyle="bold"
+            
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <include
-            android:id="@+id/slider1"
+            android:id="@+id/new1"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/new2"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
         <include
-            android:id="@+id/slider2"
+            android:id="@+id/new2"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/new1"
+            app:layout_constraintRight_toLeftOf="@id/new3"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
         <include
-            android:id="@+id/slider3"
+            android:id="@+id/new3"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/new2"
+            app:layout_constraintRight_toLeftOf="@id/new4"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
         <include
-            android:id="@+id/slider4"
+            android:id="@+id/new4"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/new3"
+            app:layout_constraintRight_toLeftOf="@id/new5"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
         <include
-            android:id="@+id/slider5"
+            android:id="@+id/new5"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/new4"
+            app:layout_constraintRight_toLeftOf="@id/new6"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
         <include
-            android:id="@+id/slider6"
+            android:id="@+id/new6"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/new5"
+            app:layout_constraintRight_toLeftOf="@id/new7"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
         <include
-            android:id="@+id/slider7"
+            android:id="@+id/new7"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/new6"
+            app:layout_constraintRight_toLeftOf="@id/new8"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
         <include
-            android:id="@+id/slider8"
+            android:id="@+id/new8"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
-    </LinearLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/new7"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newTowersLabel" />
 
-    <LinearLayout
-        android:id="@+id/towersContainer"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/oldTowersContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/send"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/slidersContainer">
+        app:layout_constraintTop_toBottomOf="@id/newTowersContainer"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <View
+            android:id="@+id/delimiter"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_delimiter"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ir.majj.golnour_client.elegantviews.ElegantTextView
+            android:id="@+id/oldTowersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/control_oldTowers"
+            android:textColor="@color/primaryDark"
+            android:textSize="20sp"
+            app:fontFaceStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/delimiter" />
 
         <include
-            android:id="@+id/tower1"
+            android:id="@+id/old1"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/old2"
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower2"
+            android:id="@+id/old2"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old1"
+            app:layout_constraintRight_toLeftOf="@id/old3"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower3"
+            android:id="@+id/old3"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old2"
+            app:layout_constraintRight_toLeftOf="@id/old4"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower4"
+            android:id="@+id/old4"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old3"
+            app:layout_constraintRight_toLeftOf="@id/old5"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower5"
+            android:id="@+id/old5"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old4"
+            app:layout_constraintRight_toLeftOf="@id/old6"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower6"
+            android:id="@+id/old6"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old5"
+            app:layout_constraintRight_toLeftOf="@id/old7"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower7"
+            android:id="@+id/old7"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old6"
+            app:layout_constraintRight_toLeftOf="@id/old8"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower8"
+            android:id="@+id/old8"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old7"
+            app:layout_constraintRight_toLeftOf="@id/old9"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower9"
+            android:id="@+id/old9"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old8"
+            app:layout_constraintRight_toLeftOf="@id/old10"
+
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower10"
+            android:id="@+id/old10"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old9"
+            app:layout_constraintRight_toLeftOf="@id/old11"
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
 
         <include
-            android:id="@+id/tower11"
+            android:id="@+id/old11"
             layout="@layout/view_slider_control"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clipChildren="false" />
-    </LinearLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            
+            app:layout_constraintLeft_toRightOf="@id/old10"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oldTowersLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ir.majj.golnour_client.elegantviews.ElegantButton
         android:id="@+id/send"

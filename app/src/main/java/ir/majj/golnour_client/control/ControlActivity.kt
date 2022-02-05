@@ -28,14 +28,9 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
         super.onCreate(savedInstanceState)
 
         bind {
-            sliders.addAll(
-                listOf(slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8)
-            )
+            sliders.addAll(listOf(new1, new2, new3, new4, new5, new6, new7, new8))
             towers.addAll(
-                listOf(
-                    tower1, tower2, tower3, tower4, tower5, tower6, tower7, tower8, tower9,
-                    tower10, tower11
-                )
+                listOf(old1, old2, old3, old4, old5, old6, old7, old8, old9, old10, old11)
             )
 
             sliders.forEachIndexed { index, slider ->

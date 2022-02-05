@@ -9,7 +9,6 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/control_tower"
         android:textColor="@color/primaryDark"
         app:layout_constraintLeft_toLeftOf="parent"
