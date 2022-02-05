@@ -11,10 +11,11 @@ import ir.majj.golnour_client.R
 import ir.majj.golnour_client.about.AboutActivity
 import ir.majj.golnour_client.databinding.ActivityControlBinding
 import ir.majj.golnour_client.databinding.ViewSliderControlBinding
-import ir.majj.golnour_client.databinding.ViewTowerControlBinding
+import ir.majj.golnour_client.preferences.Settings
 import ir.majj.golnour_client.setup.SetupActivity
 import ir.majj.golnour_client.utils.*
 import timber.log.Timber
+import kotlin.math.max
 
 
 class ControlActivity : BoundActivity<ActivityControlBinding>() {
@@ -52,6 +53,8 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
                 AboutActivity.getOpenIntent(this@ControlActivity)
                     .startActivity(this@ControlActivity)
             }
+
+            loadInitials()
         }
     }
 
@@ -69,6 +72,30 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
         }
     }
 
+    private fun loadInitials() {
+        if (Settings.slidersState.isEmpty() || Settings.towersState.isEmpty()) {
+            collectData()?.let { saveState(it) }
+            return
+        }
+
+        sliders.forEachIndexed { index, slider ->
+            val state = Settings.slidersState.getOrNull(index)
+            slider.checkbox.isChecked = state != DISABLED_VALUE
+            slider.slider.currentValue = max(state ?: MIN_VALUE, MIN_VALUE)
+        }
+
+        towers.forEachIndexed { index, tower ->
+            val state = Settings.towersState.getOrNull(index)
+            tower.checkbox.isChecked = state != DISABLED_VALUE
+            tower.slider.currentValue = max(state ?: MIN_VALUE, MIN_VALUE)
+        }
+    }
+
+    private fun saveState(towerData: SMSController.TowerData) {
+        Settings.slidersState = towerData.firstSet.toIntArray()
+        Settings.towersState = towerData.secondSet.toIntArray()
+    }
+
     private fun sendMessage() {
         if (!checkSmsPermission()) {
             return
@@ -79,6 +106,7 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
             return
         }
 
+        saveState(data)
         SMSController.sendSms(data, this)
     }
 
@@ -136,6 +164,7 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
     companion object {
         private const val REQUEST_SEND_SMS_PERMISSIONS = 1
         private const val DISABLED_VALUE = 10
+        private const val MIN_VALUE = 50
 
         fun getOpenIntent(context: Context) = context.intentFor<ControlActivity>()
     }
