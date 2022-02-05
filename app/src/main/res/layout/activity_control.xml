@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:ignore="RtlHardcoded,ContentDescription">
 
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/newTowersLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/control_newTowers"
+        android:textColor="@color/primaryDark"
+        android:textSize="20sp"
+        app:fontFaceStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/slidersContainer"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/slidersContainer"
         android:layout_width="match_parent"
@@ -13,11 +27,10 @@
         android:baselineAligned="false"
         android:clipChildren="false"
         android:orientation="horizontal"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@id/towersContainer"
+        app:layout_constraintBottom_toTopOf="@id/delimiter"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newTowersLabel"
         app:layout_constraintVertical_bias="1">
 
         <include
@@ -85,6 +98,29 @@
             android:clipChildren="false" />
     </LinearLayout>
 
+    <View
+        android:id="@+id/delimiter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_delimiter"
+        app:layout_constraintBottom_toTopOf="@id/oldTowersLabel"
+        app:layout_constraintTop_toBottomOf="@id/slidersContainer" />
+
+    <ir.majj.golnour_client.elegantviews.ElegantTextView
+        android:id="@+id/oldTowersLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/control_oldTowers"
+        android:textColor="@color/primaryDark"
+        android:textSize="20sp"
+        app:fontFaceStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/towersContainer"
+        app:layout_constraintTop_toBottomOf="@id/delimiter" />
+
     <LinearLayout
         android:id="@+id/towersContainer"
         android:layout_width="match_parent"
@@ -92,11 +128,10 @@
         android:layout_marginBottom="8dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@id/send"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/slidersContainer">
+        app:layout_constraintTop_toBottomOf="@id/oldTowersLabel">
 
         <include
             android:id="@+id/tower1"
