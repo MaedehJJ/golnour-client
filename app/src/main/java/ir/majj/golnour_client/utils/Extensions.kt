@@ -20,6 +20,14 @@ fun <T : View> T.onClick(f: (T) -> Unit) = apply {
     setOnClickListener { f(this) }
 }
 
+fun View.gone() {
+    this.visibility = View.GONE
+}
+
+fun View.visible() {
+    this.visibility = View.VISIBLE
+}
+
 fun Context.string(@StringRes resId: Int): String = getString(resId)
 
 fun Context.string(@StringRes resId: Int, vararg formatArgs: Any?): String =

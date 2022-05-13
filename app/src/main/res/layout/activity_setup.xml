@@ -20,38 +20,85 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ir.majj.golnour_client.elegantviews.ElegantEditText
-        android:id="@+id/phone"
-        style="@style/Input"
-        android:layout_width="0dp"
-        android:layout_marginTop="16dp"
-        android:gravity="right"
-        android:hint="@string/setup_phone_number"
-        android:imeActionLabel="@string/setup_next"
-        android:inputType="phone"
+    <LinearLayout
+        android:id="@+id/otpContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintTop_toBottomOf="@id/title">
 
-    <ir.majj.golnour_client.elegantviews.ElegantEditText
-        android:id="@+id/passcode"
-        style="@style/Input"
-        android:layout_width="0dp"
-        android:layout_marginTop="16dp"
-        android:hint="@string/setup_passcode"
-        android:imeActionLabel="@string/setup_confirm"
-        android:inputType="number"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phone" />
+        <ir.majj.golnour_client.elegantviews.ElegantEditText
+            android:id="@+id/otp"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:gravity="right"
+            android:hint="@string/setup_otp"
+            android:imeActionLabel="@string/setup_next"
+            android:inputType="phone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <ir.majj.golnour_client.elegantviews.ElegantButton
-        android:id="@+id/save"
-        style="@style/NormalButton"
-        android:layout_marginTop="32dp"
-        android:text="@string/setup_save"
+        <ir.majj.golnour_client.elegantviews.ElegantButton
+            android:id="@+id/otpConfirm"
+            style="@style/NormalButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="@string/setup_confirm"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/otp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/settingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passcode" />
+        app:layout_constraintTop_toBottomOf="@id/otpContainer">
+
+        <ir.majj.golnour_client.elegantviews.ElegantEditText
+            android:id="@+id/phone"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:gravity="right"
+            android:hint="@string/setup_phone_number"
+            android:imeActionLabel="@string/setup_next"
+            android:inputType="phone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/otpContainer" />
+
+        <ir.majj.golnour_client.elegantviews.ElegantEditText
+            android:id="@+id/passcode"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:hint="@string/setup_passcode"
+            android:imeActionLabel="@string/setup_confirm"
+            android:inputType="number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone" />
+
+        <ir.majj.golnour_client.elegantviews.ElegantButton
+            android:id="@+id/save"
+            style="@style/NormalButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="@string/setup_save"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passcode" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
