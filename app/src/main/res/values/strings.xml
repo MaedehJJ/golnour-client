@@ -3,6 +3,8 @@
     <string name="setup_phone_number">شماره تلفن</string>
     <string name="setup_save">ذخیره</string>
     <string name="setup_confirm">تایید</string>
+    <string name="setup_otp">رمز یکبار مصرف</string>
+    <string name="setup_otpWrongPasscode">رمز وارد شده اشتباه است</string>
     <string name="login_confirm">تایید</string>
     <string name="setup_next">بعدی</string>
     <string name="setup_error">تمامی فیلدها را پر کنید</string>

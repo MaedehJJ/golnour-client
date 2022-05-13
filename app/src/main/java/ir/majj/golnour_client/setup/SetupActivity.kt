@@ -4,13 +4,14 @@ import android.content.Context
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Toast
+import dev.samstevens.totp.code.DefaultCodeGenerator
+import dev.samstevens.totp.code.DefaultCodeVerifier
+import dev.samstevens.totp.time.SystemTimeProvider
 import ir.majj.golnour_client.R
 import ir.majj.golnour_client.databinding.ActivitySetupBinding
 import ir.majj.golnour_client.login.LoginActivity
 import ir.majj.golnour_client.preferences.Settings
-import ir.majj.golnour_client.utils.BoundActivity
-import ir.majj.golnour_client.utils.intentFor
-import ir.majj.golnour_client.utils.startActivity
+import ir.majj.golnour_client.utils.*
 
 class SetupActivity : BoundActivity<ActivitySetupBinding>() {
     override fun inflateLayout(container: ViewGroup?) = ActivitySetupBinding.inflate(layoutInflater)
@@ -19,6 +20,16 @@ class SetupActivity : BoundActivity<ActivitySetupBinding>() {
         super.onCreate(savedInstanceState)
 
         bind {
+            if (Settings.isVerified) {
+                otpContainer.gone()
+                settingContainer.visible()
+            } else {
+                otpContainer.visible()
+                settingContainer.gone()
+            }
+
+            otpConfirm.onClick { confirmOTP() }
+
             if (Settings.phoneNumber.isNotEmpty()) {
                 phone.setText(Settings.phoneNumber)
             }
@@ -28,6 +39,30 @@ class SetupActivity : BoundActivity<ActivitySetupBinding>() {
 
             save.setOnClickListener { saveSetup() }
         }
+    }
+
+    private fun confirmOTP() {
+        bind {
+            val code = otp.text
+            if (verifyOtp(code.toString())) {
+                Settings.isVerified = true
+                otpContainer.gone()
+                settingContainer.visible()
+            } else {
+                Toast.makeText(
+                    this@SetupActivity,
+                    string(R.string.setup_otpWrongPasscode),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
+
+    private fun verifyOtp(code: String): Boolean {
+        val timeProvider = SystemTimeProvider()
+        val codeGenerator = DefaultCodeGenerator()
+        val verifier = DefaultCodeVerifier(codeGenerator, timeProvider)
+        return verifier.isValidCode(SECRET, code)
     }
 
     private fun saveSetup() = bind {
@@ -44,6 +79,7 @@ class SetupActivity : BoundActivity<ActivitySetupBinding>() {
     }
 
     companion object {
+        private const val SECRET = "WOLK2ZD45UYN2RGIVYT76O4Z6SZD56XU"
         fun getOpenIntent(context: Context) = context.intentFor<SetupActivity>()
     }
 }

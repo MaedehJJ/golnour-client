@@ -6,4 +6,5 @@ object Settings {
     var isSetupDone by Shared("Settings:isSetUpDone", false)
     var slidersState by Shared("Settings:slidersState", intArrayOf())
     var towersState by Shared("Settings:towerState", intArrayOf())
+    var isVerified by Shared("Settings:isVerified", false)
 }
