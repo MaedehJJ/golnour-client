@@ -8,15 +8,17 @@ import ir.majj.golnour_client.preferences.Settings
 import timber.log.Timber
 
 object SMSController {
-    fun sendSms(data: TowerData, context: Context) {
+    fun sendSms(data: TowerData, context: Context) : Boolean {
         val content = "m,${data.firstSet.joinToString(",")}\nn,${data.secondSet.joinToString(",")}"
         val smsManager = SmsManager.getDefault()
-        try {
+        return try {
             Toast.makeText(context, R.string.sms_sending, Toast.LENGTH_LONG).show()
             smsManager.sendTextMessage(Settings.phoneNumber, null, content, null, null)
+            true
         } catch (e: IllegalArgumentException) {
             Toast.makeText(context, R.string.sms_sendingFailed, Toast.LENGTH_LONG).show()
             Timber.e(e, "${Settings.phoneNumber} is not in its appropriate format")
+            false
         }
     }
 

@@ -4,9 +4,11 @@ import android.Manifest.permission.SEND_SMS
 import android.content.Context
 import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isGone
 import ir.majj.golnour_client.R
 import ir.majj.golnour_client.about.AboutActivity
 import ir.majj.golnour_client.databinding.ActivityControlBinding
@@ -16,6 +18,8 @@ import ir.majj.golnour_client.setup.SetupActivity
 import ir.majj.golnour_client.utils.*
 import timber.log.Timber
 import kotlin.math.max
+import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
 
 class ControlActivity : BoundActivity<ActivityControlBinding>() {
@@ -68,7 +72,7 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
             }
 
             send.onClick {
-                sendMessage()
+                performSend()
             }
             setup.onClick {
                 SetupActivity.getOpenIntent(this@ControlActivity)
@@ -122,18 +126,25 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
         Settings.towersState = towerData.secondSet.toIntArray()
     }
 
-    private fun sendMessage() {
+    private fun performSend() {
+        if (sendMessage()) {
+            disableSend()
+            EnableSendTimer().start()
+        }
+    }
+
+    private fun sendMessage(): Boolean {
         if (!checkSmsPermission()) {
-            return
+            return false
         }
         val data = collectData()
         if (data == null) {
             Timber.e("Data is null")
-            return
+            return false
         }
 
         saveState(data)
-        SMSController.sendSms(data, this)
+        return SMSController.sendSms(data, this)
     }
 
     private fun checkSmsPermission(): Boolean {
@@ -166,6 +177,15 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
         SMSController.TowerData(firstSet, secondSet)
     }
 
+    private fun disableSend() = bind {
+        send.isEnabled = false
+        sendTimer.text = string(
+            R.string.control_sent,
+            SEND_COOL_DOWN.inWholeSeconds.toString().withPersianDigits()
+        )
+        sendTimer.isGone = false
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -184,13 +204,30 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
             return
         }
 
-        sendMessage()
+        performSend()
+    }
+
+    inner class EnableSendTimer : CountDownTimer(
+        SEND_COOL_DOWN.inWholeMilliseconds, 1.seconds.inWholeMilliseconds
+    ) {
+        override fun onTick(millisUntilFinished: Long) {
+            val remainingSeconds = millisUntilFinished.milliseconds.inWholeSeconds.toString()
+            bind {
+                sendTimer.text = string(R.string.control_sent, remainingSeconds.withPersianDigits())
+            }
+        }
+
+        override fun onFinish() = bind {
+            sendTimer.isGone = true
+            send.isEnabled = true
+        }
     }
 
     companion object {
         private const val REQUEST_SEND_SMS_PERMISSIONS = 1
         private const val DISABLED_VALUE = 10
         private const val MIN_VALUE = 50
+        private val SEND_COOL_DOWN = 15.seconds
 
         fun getOpenIntent(context: Context) = context.intentFor<ControlActivity>()
     }
