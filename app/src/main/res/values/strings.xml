@@ -14,6 +14,7 @@
     <string name="setup_passcode">رمز عبور</string>
     <string name="control_tower">Tower %d</string>
     <string name="control_send">ارسال</string>
+    <string name="control_sent">ارسال پیام با موفقیت انجام شد. برای ارسال مجدد %s ثانیه منتظر بمانید</string>
     <string name="control_sms_permission_error">برای ارسال پیام نیاز به صدور اجازه دسترسی است.</string>
     <string name="control_newTowers">New Towers</string>
     <string name="control_oldTowers">Old Towers</string>

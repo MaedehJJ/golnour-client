@@ -54,6 +54,8 @@ fun <T> createIntent(
 inline fun <reified T : Any> Context.intentFor(vararg params: Pair<String, Any?>): Intent =
     createIntent(this, T::class.java, params)
 
+fun String.withPersianDigits(): String = DigitUtils.toPersianDigits(this)
+
 private fun fillIntentArguments(intent: Intent, params: Array<out Pair<String, Any?>>) {
     params.forEach {
         when (val value = it.second) {
@@ -86,5 +88,19 @@ private fun fillIntentArguments(intent: Intent, params: Array<out Pair<String, A
             else -> throw RuntimeException("Intent extra ${it.first} has wrong type ${value.javaClass.name}")
         }
         return@forEach
+    }
+}
+
+object DigitUtils {
+    private val PERSIAN_DIGITS = listOf('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹')
+    private val LATIN_DIGITS = listOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
+
+    fun toPersianDigits(input: String): String {
+        var result = input
+        (LATIN_DIGITS.indices).forEach { index ->
+            result = result
+                .replace(LATIN_DIGITS[index], PERSIAN_DIGITS[index])
+        }
+        return result
     }
 }
