@@ -15,6 +15,8 @@
     <string name="control_sms_permission_error">برای ارسال پیام نیاز به صدور اجازه دسترسی است.</string>
     <string name="control_newTowers">New Towers</string>
     <string name="control_oldTowers">Old Towers</string>
+    <string name="control_allOn">All ON</string>
+    <string name="control_allOff">All OFF</string>
     <string name="setup_title">ثبت تنظیمات</string>
     <string name="sms_sending">در حال ارسال مشخصات …</string>
     <string name="sms_sendingFailed">ارسال پیام با مشکل مواجه شد!</string>

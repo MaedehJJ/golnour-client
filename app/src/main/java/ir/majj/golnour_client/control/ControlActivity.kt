@@ -39,8 +39,29 @@ class ControlActivity : BoundActivity<ActivityControlBinding>() {
                 )
             )
 
+            newTowersOn.onClick {
+                sliders.forEach { slider ->
+                    slider.checkbox.isChecked = true
+                }
+            }
+            newTowersOff.onClick {
+                sliders.forEach { slider ->
+                    slider.checkbox.isChecked = false
+                }
+            }
             sliders.forEachIndexed { index, slider ->
                 setUpColumn(index, slider)
+            }
+
+            oldTowersOn.onClick {
+                towers.forEach { tower ->
+                    tower.checkbox.isChecked = true
+                }
+            }
+            oldTowersOff.onClick {
+                towers.forEach { tower ->
+                    tower.checkbox.isChecked = false
+                }
             }
             towers.forEachIndexed { index, tower ->
                 setUpColumn(index, tower)
